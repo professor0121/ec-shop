@@ -4,6 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+     "install:root": "npm install",
+
+    "install:auth": "cd server/services/auth && npm install",
+    "install:user": "cd server/services/user && npm install",
+    "install:product": "cd server/services/product && npm install",
+    "install:notification": "cd server/services/notification && npm install",
+    "install:gateway": "cd server/gateway && npm install",
+    "install:client": "cd client && npm install",
+
+    "install:all": "npm run install:root && npm run install:gateway && npm run install:auth && npm run install:user && npm run install:product && npm run install:notification && npm run install:client",
+
+    
     "start:auth": "cd server/services/auth && npm run dev",
     "start:user": "cd server/services/user && npm run dev",
     "start:product": "cd server/services/product && npm run dev",
