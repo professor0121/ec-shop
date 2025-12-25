@@ -9,7 +9,8 @@
     "start:product": "cd server/services/product && npm run dev",
     "start:gateway": "cd server/gateway && npm run dev",
     "start:client": "cd client && npm run dev",
-    "start:all": "concurrently -n AUTH,USER,PRODUCT,GATEWAY,CLIENT -c blue,green,magenta,cyan,red \"npm run start:gateway\" \"npm run start:auth\" \"npm run start:product\" \"npm run start:user\" \"npm run start:client\""
+    "start:notification":"cd server/services/notification && npm run dev",
+    "start:all": "concurrently -n AUTH,USER,PRODUCT,GATEWAY,CLIENT,NOTIFICATION -c blue,green,magenta,cyan,red,yellow \"npm run start:gateway\" \"npm run start:auth\" \"npm run start:product\" \"npm run start:user\" \"npm run start:client\" \"npm run start:notification\""
   },
   "keywords": [],
   "author": "",
