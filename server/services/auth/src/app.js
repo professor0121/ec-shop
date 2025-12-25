@@ -1,9 +1,10 @@
 import express from 'express';
-import './config/dbConfig.js';
 import errorHandler from './middlewares/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
 import passport from 'passport';
+import './config/dbConfig.js';
 import './config/passportConfig.js';
+import './config/redisConfig.js';
 import { configureSession } from './config/sessionCookieConfig.js';
 import { connectRabbitMQ } from './config/rabbitMqConfig.js';
 const app = express();

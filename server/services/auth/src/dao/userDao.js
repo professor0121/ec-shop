@@ -10,5 +10,8 @@ export const userDao = {
     },
     findById: async (id) => {
         return await User.findById(id);
+    },
+    updateByEmail: async (email, updateData) => {
+        return await User.findOneAndUpdate({ email }, updateData, { new: true });
     }
 };
