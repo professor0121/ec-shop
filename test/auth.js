@@ -5,7 +5,7 @@ async function registerAuthTests() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            email: 'test@effrtffxamplerrteer.com',
+            email: 'abhishekkushwahaak0121@gmail.com',
             password: 'password123'
         })
     });
