@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "start:gateway": "start cmd /k \"cd server\\gateway && npm run dev\"",
+        "start:auth": "start cmd /k \"cd server\\services\\auth && npm run dev\"",
+        "start:user": "start cmd /k \"cd server\\services\\user && npm run dev\"",
+        "start:product": "start cmd /k \"cd server\\services\\product && npm run dev\"",
+        "start:all": "npm run start:auth && npm run start:user && npm run start:product && npm run start:gateway"
+    }
+}

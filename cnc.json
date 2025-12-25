@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start:auth": "cd services/auth && npm start",
+    "start:user": "cd services/user && npm start",
+    "start:product": "cd services/product && npm start",
+
+    "start:all": "concurrently -n AUTH,USER,PRODUCT -c blue,green,magenta \"npm run start:auth\" \"npm run start:user\" \"npm run start:product\""
+  }
+}
