@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media Service Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    select, input, button {
+      margin: 8px 0;
+      padding: 6px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📸 Media Service Upload Test</h2>
+
+  <label>Media Type</label><br />
+  <select id="type">
+    <option value="IMAGE">IMAGE</option>
+    <option value="VIDEO">VIDEO</option>
+    <option value="AUDIO">AUDIO</option>
+    <option value="DOCUMENT">DOCUMENT</option>
+  </select>
+
+  <br />
+
+  <input type="file" id="file" />
+
+  <br />
+
+  <button onclick="upload()">Upload</button>
+
+  <h3>Response</h3>
+  <pre id="response"></pre>
+
+  <script>
+    async function upload() {
+      const fileInput = document.getElementById("file");
+      const type = document.getElementById("type").value;
+      const responseBox = document.getElementById("response");
+
+      if (!fileInput.files.length) {
+        alert("Please select a file");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]);
+      formData.append("type", type);
+
+      try {
+        const res = await fetch("http://localhost:3005/api/v1/media/upload", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await res.json();
+        responseBox.textContent = JSON.stringify(data, null, 2);
+
+      } catch (err) {
+        responseBox.textContent = err.message;
+      }
+    }
+  </script>
+
+</body>
+</html>

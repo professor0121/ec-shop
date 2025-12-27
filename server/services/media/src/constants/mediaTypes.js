@@ -1,0 +1,6 @@
+export const MEDIA_TYPES = {
+  IMAGE: "IMAGE",
+  VIDEO: "VIDEO",
+  AUDIO: "AUDIO",
+  DOCUMENT: "DOCUMENT"
+};
