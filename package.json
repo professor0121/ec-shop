@@ -12,8 +12,9 @@
     "install:notification": "cd server/services/notification && npm install",
     "install:gateway": "cd server/gateway && npm install",
     "install:client": "cd client && npm install",
+    "install:media": "cd server/services/media && npm install",
 
-    "install:all": "npm run install:root && npm run install:gateway && npm run install:auth && npm run install:user && npm run install:product && npm run install:notification && npm run install:client",
+    "install:all": "npm run install:root && npm run install:gateway && npm run install:auth && npm run install:user && npm run install:product && npm run install:notification && npm run install:client && npm run install:media",
 
     
     "start:auth": "cd server/services/auth && npm run dev",
@@ -22,7 +23,8 @@
     "start:gateway": "cd server/gateway && npm run dev",
     "start:client": "cd client && npm run dev",
     "start:notification":"cd server/services/notification && npm run dev",
-    "start:all": "concurrently -n AUTH,USER,PRODUCT,GATEWAY,CLIENT,NOTIFICATION -c blue,green,magenta,cyan,red,yellow \"npm run start:gateway\" \"npm run start:auth\" \"npm run start:product\" \"npm run start:user\" \"npm run start:client\" \"npm run start:notification\""
+    "start:media":"cd server/services/media && npm run dev",
+    "start:all": "concurrently -n AUTH,USER,PRODUCT,GATEWAY,CLIENT,NOTIFICATION,MEDIA -c blue,green,magenta,cyan,red,yellow,pink \"npm run start:gateway\" \"npm run start:auth\" \"npm run start:product\" \"npm run start:user\" \"npm run start:client\" \"npm run start:notification\" \"npm run start:media\""
   },
   "keywords": [],
   "author": "",
